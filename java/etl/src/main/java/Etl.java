@@ -4,12 +4,12 @@ import java.util.HashMap;
 
 public class Etl {
 	public Map<String, Integer> transform(Map<Integer, List<String>> old) {
-		Map<String, Integer> etl = new HashMap<String, Integer>();
-		for(Integer i: old.keySet()){
-			for(String s: old.get(i)){
-				etl.put(s.toLowerCase(),i);
+		Map<String, Integer> transformedMap = new HashMap<String, Integer>();
+		for(Integer score: old.keySet()){
+			for(String letter: old.get(score)){
+				transformedMap.put(letter.toLowerCase(),score);
 			}
 		}		
-		return etl;
+		return transformedMap;
 	}
 }
